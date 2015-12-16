@@ -19,6 +19,8 @@ module Moip::Assinaturas
             message: hash['message'],
             errors:  hash['errors']
           }
+        when 401
+          raise(UnauthorizedError, "Você não tem permissão de utilizar o assinaturas")
         else
           raise(WebServerResponseError, "Ocorreu um erro no retorno do webservice")
         end
@@ -34,6 +36,8 @@ module Moip::Assinaturas
             success:  true,
             plans:    hash[:plans]
           }
+        when 401
+          raise(UnauthorizedError, "Você não tem permissão de utilizar o assinaturas")
         else
           raise(WebServerResponseError, "Ocorreu um erro no retorno do webservice")
         end
@@ -55,6 +59,8 @@ module Moip::Assinaturas
             success: false,
             message: 'not found'
           }
+        when 401
+          raise(UnauthorizedError, "Você não tem permissão de utilizar o assinaturas")
         else
           raise(WebServerResponseError, "Ocorreu um erro no retorno do webservice")
         end
@@ -74,6 +80,8 @@ module Moip::Assinaturas
             success: false,
             plan: hash
           }
+        when 401
+          raise(UnauthorizedError, "Você não tem permissão de utilizar o assinaturas")
         else
           raise(WebServerResponseError, "Ocorreu um erro no retorno do webservice")
         end

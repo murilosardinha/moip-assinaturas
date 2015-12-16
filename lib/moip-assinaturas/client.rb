@@ -7,6 +7,7 @@ module Moip::Assinaturas
 
   class WebServerResponseError < StandardError ; end
   class MissingTokenError < StandardError ; end
+  class UnauthorizedError < StandardError ; end
 
   class Client
     include HTTParty
